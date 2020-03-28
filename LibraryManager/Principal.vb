@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SQLite
-Imports System.Reflection
 Imports LibraryData.LibraryData
+Imports LibraryQuery.LibraryBooks
 
 Public Class Principal
     Public con As SQLiteConnection = Conectar("LibraryManagerDB.db")
@@ -8,7 +8,6 @@ Public Class Principal
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             con.Open()
-
             ComprobarBasesDeDatos(con)
             ActualizarListaLibros()
         Catch ex As Exception
@@ -17,14 +16,8 @@ Public Class Principal
     End Sub
 
     Public Sub ActualizarListaLibros()
-        Dim Ds As New DataSet
-        Dim Da As New SQLiteDataAdapter("select id, titulo, autor, isbn, editorial, descripcion, googleid from libros", con)
-
-        Da.Fill(Ds, "libros")
-
-        Dim myDataView As DataView = New DataView(Ds.Tables("libros"))
-
-        DataGridViewLibros.DataSource = myDataView
+        Dim Lista As DataView = ObtenerListaLibros(con)
+        DataGridViewLibros.DataSource = Lista
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
