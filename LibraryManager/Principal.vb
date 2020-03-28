@@ -16,8 +16,14 @@ Public Class Principal
     End Sub
 
     Public Sub ActualizarListaLibros()
-        Dim Lista As DataView = ObtenerListaLibros(con)
-        DataGridViewLibros.DataSource = Lista
+        Try
+            Dim Lista As DataView = ObtenerListaLibros(con)
+            DataGridViewLibros.DataSource = Nothing
+            DataGridViewLibros.Refresh()
+            DataGridViewLibros.DataSource = Lista
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
@@ -26,5 +32,20 @@ Public Class Principal
 
     Private Sub NuevoLibroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoLibroToolStripMenuItem.Click
         NuevoLibro.ShowDialog()
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Try
+            Dim Buscar As DataView = BuscarLibro(con, buscarTitulo.Text, buscarIsbn.Text, buscarEditorial.Text, buscarDescripcion.Text)
+            DataGridViewLibros.DataSource = Nothing
+            DataGridViewLibros.Refresh()
+            DataGridViewLibros.DataSource = Buscar
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnReiniciar_Click(sender As Object, e As EventArgs) Handles btnReiniciar.Click
+        ActualizarListaLibros()
     End Sub
 End Class
