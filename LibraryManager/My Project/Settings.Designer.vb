@@ -53,17 +53,6 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("server=192.168.1.80;user id=librarymanager;password=librarymanager;persistsecurit"& _ 
-            "yinfo=True;database=LibraryManager")>  _
-        Public ReadOnly Property LibraryManagerConnectionString() As String
-            Get
-                Return CType(Me("LibraryManagerConnectionString"),String)
-            End Get
-        End Property
     End Class
 End Namespace
 
