@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Principal
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class Principal
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
         Me.DataGridViewLibros = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -40,11 +41,17 @@ Partial Class Principal
         Me.buscarEditorial = New System.Windows.Forms.TextBox()
         Me.buscarDescripcion = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnReiniciar = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.NotifyIconBarraTareas = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.ContextMenuStripBarraTareas = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.SalirDeLaAplicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MinimizarProgramaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AbrirAplicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridViewLibros, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.ContextMenuStripBarraTareas.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridViewLibros
@@ -70,7 +77,7 @@ Partial Class Principal
         '
         'ArchivoToolStripMenuItem
         '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MinimizarProgramaToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ArchivoToolStripMenuItem.Text = "&Archivo"
@@ -78,7 +85,7 @@ Partial Class Principal
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'LibrosToolStripMenuItem
@@ -195,6 +202,15 @@ Partial Class Principal
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar Libros"
         '
+        'btnReiniciar
+        '
+        Me.btnReiniciar.Location = New System.Drawing.Point(911, 47)
+        Me.btnReiniciar.Name = "btnReiniciar"
+        Me.btnReiniciar.Size = New System.Drawing.Size(152, 23)
+        Me.btnReiniciar.TabIndex = 14
+        Me.btnReiniciar.Text = "Reiniciar Filtro"
+        Me.btnReiniciar.UseVisualStyleBackColor = True
+        '
         'btnBuscar
         '
         Me.btnBuscar.Location = New System.Drawing.Point(762, 47)
@@ -204,14 +220,37 @@ Partial Class Principal
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
-        'btnReiniciar
+        'NotifyIconBarraTareas
         '
-        Me.btnReiniciar.Location = New System.Drawing.Point(911, 47)
-        Me.btnReiniciar.Name = "btnReiniciar"
-        Me.btnReiniciar.Size = New System.Drawing.Size(152, 23)
-        Me.btnReiniciar.TabIndex = 14
-        Me.btnReiniciar.Text = "Reiniciar Filtro"
-        Me.btnReiniciar.UseVisualStyleBackColor = True
+        Me.NotifyIconBarraTareas.ContextMenuStrip = Me.ContextMenuStripBarraTareas
+        Me.NotifyIconBarraTareas.Icon = CType(resources.GetObject("NotifyIconBarraTareas.Icon"), System.Drawing.Icon)
+        Me.NotifyIconBarraTareas.Text = "Library Manager"
+        Me.NotifyIconBarraTareas.Visible = True
+        '
+        'ContextMenuStripBarraTareas
+        '
+        Me.ContextMenuStripBarraTareas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AbrirAplicaciónToolStripMenuItem, Me.SalirDeLaAplicaciónToolStripMenuItem})
+        Me.ContextMenuStripBarraTareas.Name = "ContextMenuStripBarraTareas"
+        Me.ContextMenuStripBarraTareas.Size = New System.Drawing.Size(182, 48)
+        '
+        'SalirDeLaAplicaciónToolStripMenuItem
+        '
+        Me.SalirDeLaAplicaciónToolStripMenuItem.Name = "SalirDeLaAplicaciónToolStripMenuItem"
+        Me.SalirDeLaAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.SalirDeLaAplicaciónToolStripMenuItem.Text = "Salir de la aplicación"
+        '
+        'MinimizarProgramaToolStripMenuItem
+        '
+        Me.MinimizarProgramaToolStripMenuItem.Name = "MinimizarProgramaToolStripMenuItem"
+        Me.MinimizarProgramaToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
+        Me.MinimizarProgramaToolStripMenuItem.Text = "Minimizar a la barra de tareas"
+        '
+        'AbrirAplicaciónToolStripMenuItem
+        '
+        Me.AbrirAplicaciónToolStripMenuItem.Enabled = False
+        Me.AbrirAplicaciónToolStripMenuItem.Name = "AbrirAplicaciónToolStripMenuItem"
+        Me.AbrirAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.AbrirAplicaciónToolStripMenuItem.Text = "Abrir aplicación"
         '
         'Principal
         '
@@ -226,12 +265,14 @@ Partial Class Principal
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.Name = "Principal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Library Manager"
         CType(Me.DataGridViewLibros, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.ContextMenuStripBarraTareas.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -256,4 +297,9 @@ Partial Class Principal
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnReiniciar As Button
     Friend WithEvents btnBuscar As Button
+    Friend WithEvents NotifyIconBarraTareas As NotifyIcon
+    Friend WithEvents ContextMenuStripBarraTareas As ContextMenuStrip
+    Friend WithEvents SalirDeLaAplicaciónToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MinimizarProgramaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AbrirAplicaciónToolStripMenuItem As ToolStripMenuItem
 End Class

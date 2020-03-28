@@ -56,4 +56,15 @@ Public Class LibraryBooks
             Throw New Exception(ex.Message)
         End Try
     End Function
+
+    Public Shared Function CrearLibro(con As SQLiteConnection, titulo As String, isbn As String, autor As String, editorial As String, descripcion As String) As Boolean
+        Try
+            Dim command As New SQLiteCommand("INSERT INTO 'libros' (titulo, isbn, autor, editorial, descripcion) " &
+                                             "values ('" & titulo & "', '" & isbn & "', '" & autor & "', '" & editorial & "', '" & descripcion & "');", con)
+            command.ExecuteNonQuery()
+            Return True
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
 End Class
