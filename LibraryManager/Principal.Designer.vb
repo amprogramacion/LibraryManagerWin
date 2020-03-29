@@ -27,6 +27,7 @@ Partial Class Principal
         Me.DataGridViewLibros = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MinimizarProgramaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LibrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevoLibroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -41,13 +42,12 @@ Partial Class Principal
         Me.buscarEditorial = New System.Windows.Forms.TextBox()
         Me.buscarDescripcion = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnReiniciar = New System.Windows.Forms.Button()
-        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.BtnReiniciar = New System.Windows.Forms.Button()
+        Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.NotifyIconBarraTareas = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ContextMenuStripBarraTareas = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.SalirDeLaAplicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MinimizarProgramaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AbrirAplicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirDeLaAplicaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridViewLibros, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -82,10 +82,16 @@ Partial Class Principal
         Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ArchivoToolStripMenuItem.Text = "&Archivo"
         '
+        'MinimizarProgramaToolStripMenuItem
+        '
+        Me.MinimizarProgramaToolStripMenuItem.Name = "MinimizarProgramaToolStripMenuItem"
+        Me.MinimizarProgramaToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
+        Me.MinimizarProgramaToolStripMenuItem.Text = "Minimizar a la barra de tareas"
+        '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'LibrosToolStripMenuItem
@@ -183,8 +189,8 @@ Partial Class Principal
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btnReiniciar)
-        Me.GroupBox1.Controls.Add(Me.btnBuscar)
+        Me.GroupBox1.Controls.Add(Me.BtnReiniciar)
+        Me.GroupBox1.Controls.Add(Me.BtnBuscar)
         Me.GroupBox1.Controls.Add(Me.buscarAutor)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.buscarDescripcion)
@@ -202,23 +208,23 @@ Partial Class Principal
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar Libros"
         '
-        'btnReiniciar
+        'BtnReiniciar
         '
-        Me.btnReiniciar.Location = New System.Drawing.Point(911, 47)
-        Me.btnReiniciar.Name = "btnReiniciar"
-        Me.btnReiniciar.Size = New System.Drawing.Size(152, 23)
-        Me.btnReiniciar.TabIndex = 14
-        Me.btnReiniciar.Text = "Reiniciar Filtro"
-        Me.btnReiniciar.UseVisualStyleBackColor = True
+        Me.BtnReiniciar.Location = New System.Drawing.Point(911, 47)
+        Me.BtnReiniciar.Name = "BtnReiniciar"
+        Me.BtnReiniciar.Size = New System.Drawing.Size(152, 23)
+        Me.BtnReiniciar.TabIndex = 14
+        Me.BtnReiniciar.Text = "Reiniciar Filtro"
+        Me.BtnReiniciar.UseVisualStyleBackColor = True
         '
-        'btnBuscar
+        'BtnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(762, 47)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(143, 23)
-        Me.btnBuscar.TabIndex = 13
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = True
+        Me.BtnBuscar.Location = New System.Drawing.Point(762, 47)
+        Me.BtnBuscar.Name = "BtnBuscar"
+        Me.BtnBuscar.Size = New System.Drawing.Size(143, 23)
+        Me.BtnBuscar.TabIndex = 13
+        Me.BtnBuscar.Text = "Buscar"
+        Me.BtnBuscar.UseVisualStyleBackColor = True
         '
         'NotifyIconBarraTareas
         '
@@ -233,24 +239,18 @@ Partial Class Principal
         Me.ContextMenuStripBarraTareas.Name = "ContextMenuStripBarraTareas"
         Me.ContextMenuStripBarraTareas.Size = New System.Drawing.Size(182, 48)
         '
-        'SalirDeLaAplicaciónToolStripMenuItem
-        '
-        Me.SalirDeLaAplicaciónToolStripMenuItem.Name = "SalirDeLaAplicaciónToolStripMenuItem"
-        Me.SalirDeLaAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
-        Me.SalirDeLaAplicaciónToolStripMenuItem.Text = "Salir de la aplicación"
-        '
-        'MinimizarProgramaToolStripMenuItem
-        '
-        Me.MinimizarProgramaToolStripMenuItem.Name = "MinimizarProgramaToolStripMenuItem"
-        Me.MinimizarProgramaToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
-        Me.MinimizarProgramaToolStripMenuItem.Text = "Minimizar a la barra de tareas"
-        '
         'AbrirAplicaciónToolStripMenuItem
         '
         Me.AbrirAplicaciónToolStripMenuItem.Enabled = False
         Me.AbrirAplicaciónToolStripMenuItem.Name = "AbrirAplicaciónToolStripMenuItem"
         Me.AbrirAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
         Me.AbrirAplicaciónToolStripMenuItem.Text = "Abrir aplicación"
+        '
+        'SalirDeLaAplicaciónToolStripMenuItem
+        '
+        Me.SalirDeLaAplicaciónToolStripMenuItem.Name = "SalirDeLaAplicaciónToolStripMenuItem"
+        Me.SalirDeLaAplicaciónToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.SalirDeLaAplicaciónToolStripMenuItem.Text = "Salir de la aplicación"
         '
         'Principal
         '
@@ -295,8 +295,8 @@ Partial Class Principal
     Friend WithEvents buscarEditorial As TextBox
     Friend WithEvents buscarDescripcion As TextBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btnReiniciar As Button
-    Friend WithEvents btnBuscar As Button
+    Friend WithEvents BtnReiniciar As Button
+    Friend WithEvents BtnBuscar As Button
     Friend WithEvents NotifyIconBarraTareas As NotifyIcon
     Friend WithEvents ContextMenuStripBarraTareas As ContextMenuStrip
     Friend WithEvents SalirDeLaAplicaciónToolStripMenuItem As ToolStripMenuItem

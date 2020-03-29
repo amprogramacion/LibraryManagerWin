@@ -34,7 +34,7 @@ Public Class Principal
         NuevoLibro.ShowDialog()
     End Sub
 
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
         Try
             Dim Buscar As DataView = BuscarLibro(con, buscarTitulo.Text, buscarIsbn.Text, buscarEditorial.Text, buscarDescripcion.Text)
             DataGridViewLibros.DataSource = Nothing
@@ -45,7 +45,7 @@ Public Class Principal
         End Try
     End Sub
 
-    Private Sub btnReiniciar_Click(sender As Object, e As EventArgs) Handles btnReiniciar.Click
+    Private Sub BtnReiniciar_Click(sender As Object, e As EventArgs) Handles BtnReiniciar.Click
         ActualizarListaLibros()
     End Sub
 
